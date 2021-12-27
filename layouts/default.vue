@@ -2,8 +2,8 @@
   <div class='bg-gray-200 min-h-screen font-serif font-light leading-7'>
     <div class='bg-zinc-900 border-b border-zinc-700'>
       <div class='container mx-auto px-10 py-2 text-gray-400 text-center flex justify-center'>
-        <NuxtLink class='text-rose-500' to='/'>
-          [<span class='text-cyan-400'>...</span>]
+        <NuxtLink class='mx-4' id='home' to='/'>
+          [<span class=''>...</span>]
         </NuxtLink>
         <NuxtLink class='md:px-6 md:mx-4 px-2' to='/solutions'>
           Solutions
@@ -24,7 +24,11 @@
 </template>
 
 <style scoped>
-.nuxt-link-exact-active {
+#home.nuxt-link-exact-active {
+  @apply text-rose-500;
+}
+
+#home.nuxt-link-exact-active > span, .nuxt-link-exact-active {
   @apply text-cyan-400;
 }
 </style>
