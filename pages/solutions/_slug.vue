@@ -10,7 +10,7 @@
     </div>
     <article class='bg-white max-w-4xl mx-auto px-10 py-6 lg:mt-8 lg:rounded-lg' v-if='article'>
       <h1 class='text-xl pt-4 text-cyan-600'>{{ article.title }}</h1>
-      <p class='text-sm text-gray-400 py-1'>Created {{$moment(article.createdAt).fromNow()}}</p>
+      <p class='text-xs text-gray-400 py-1 font-sans'>Created {{$moment(article.createdAt).fromNow()}}</p>
       <nuxt-content :document='article' class='text-gray-500' />
     </article>
   </div>
