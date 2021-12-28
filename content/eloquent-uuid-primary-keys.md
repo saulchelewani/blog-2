@@ -1,7 +1,8 @@
 ---
 title: UUID Primary Keys for Eloquent
-description: Changing implementation of Laravel Eloquent primary keys from auto-incrementing integers to UUID string
+description: Changing the implementation of Laravel Eloquent primary keys from auto-incrementing integers to UUID string
 type: solution
+author: Saul Chelewani
 ---
 For the majority of use cases, an auto incrementing ID for your eloquent models should be fine. 
 However, I have met a few cases where it has caused a living hell out of production data. 
@@ -17,17 +18,17 @@ We leverage on Laravel's `Str::uuid()` for generation of the keys. However, that
 We will make three changes to our files and then look at ways of auto-generating the required boilerplate code going forward.
 ### 1. Migration
 Instead of using 
-```php
+```php[migrations/create_users_table.php]
 $table->id()
 ```
 Use
-```php
+```php[migrations/create_users_table.php]
 $table->uuid('id')->primary();
 ```
 
 ### 2. Model
 Add the following code in the boot method to generate the `UUID` on creation of your model
-```php
+```php[app/Models/User.php]
 use Exception;
 use Illuminate\Support\Str;
 
@@ -46,7 +47,7 @@ protected static function boot()
 ```
 
 Next, we need to tell `Eloquent` to expect `UUID` type of key and not to auto-increment it. In the same model, we add the following properties:
-```php
+```php[app/Models/User.php]
 protected $keyType = 'uuid';
 public $incrementing = false;
 ```
@@ -55,11 +56,11 @@ public $incrementing = false;
 This could easily fall under `Migration` but I didn't want it to be buried between the lines.
 
 Instead of using
-```php
+```php[migrations/create_users_table.php]
 $table->foreignId('user_id')->constrained();
 ```
 Use 
-```php
+```php[migrations/create_users_table.php]
 $table->foreignUuid('user_id')->constrained();
 ```
 ## Refactoring 
@@ -68,7 +69,7 @@ This implementation works fine but you might have noticed that we are doing it p
 ### 1. UUID Trait
 Firstly, let's move the boot method to a trait and see how we can leverage on other powers of Laravel to completely forget about that piece of code
 
-```php
+```php[app/Traits/Uuid.php]
 namespace App\Traits;
 
 use Exception;
@@ -92,7 +93,7 @@ trait Uuid
 ```
 
 Then our models become leaner...
-```php
+```php[app/Models/User.php]
 namespace App\Models;
 
 use App\Traits\Uuid;
@@ -112,6 +113,59 @@ We can still move more of the `routine` away from us by pushing the boilerplate 
 php artisan stubs:publish
 ```
 The stubs are published in the `/stubs` directory. Now we can edit the `model.stub` and `migration.create.stub` files to include the changes we changes we would otherwise make each time we generate new model and migration.
+
+Your final stubs should look like the following
+
+```php[stubs/model.stub]
+namespace {{ namespace }};
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+use App\Traits\Uuid;
+
+class {{ class }} extends Model
+{
+    use HasFactory, Uuid;
+
+    protected $keyType = 'uuid';
+    public $incrementing = false;
+    protected $guarded = [];
+}
+```
+
+```php[stubs/migration.create.stub]
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class {{ class }} extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('{{ table }}', function (Blueprint $table) {
+            $table->uuid('id')->primary();
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('{{ table }}');
+    }
+}
+```
+
 
 ## Summary
 We have managed to change the primary key from auto-incrementing integer to a string UUID. More importantly, we have automated the generation of the boilerplate code so that we don't have to think about how we generate UUID for the next model we generate; and my favourite... no routines!
