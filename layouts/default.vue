@@ -28,7 +28,10 @@
   @apply text-rose-500;
 }
 
-#home.nuxt-link-exact-active > span, .nuxt-link-exact-active {
+#home.nuxt-link-exact-active > span,
+.nuxt-link-exact-active,
+.nuxt-link-active:not(#home) {
   @apply text-cyan-400;
 }
+
 </style>
