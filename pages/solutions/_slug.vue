@@ -28,7 +28,7 @@
                       fill='currentColor'></path>
               </svg>
             </a>
-            <a href='https://twitter.com/@kalmfuz' target='_blank' rel='noopener noreferrer'>
+            <a href='https://twitter.com/kalmfuz' target='_blank' rel='noopener noreferrer'>
               <svg class='text-cyan-500 h-4 mr-4 fill-current' width='24' height='20' viewBox='0 0 24 20' fill='none'
                    xmlns='http://www.w3.org/2000/svg'>
                 <path
