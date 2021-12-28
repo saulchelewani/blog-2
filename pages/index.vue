@@ -10,8 +10,8 @@
       </div>
     </div>
     <div class='max-w-6xl mx-auto px-10 lg:flex md:flex-wrap gap-x-10 mt-10'>
-      <NuxtLink to='/solutions' class='block lg:flex-1 bg-white p-8 mb-8 rounded-lg'>
-        <div class='flex gap-x-4 border-b border-amber-500 pb-3'>
+      <NuxtLink to='/solutions' class='block lg:flex-1 dark:bg-zinc-800 bg-white p-8 mb-8 rounded-lg'>
+        <div class='flex gap-x-4 border-b border-amber-500 pb-3 dark:text-gray-200'>
           <svg class='w-6 h-6 text-amber-500' fill='none' stroke='currentColor' viewBox='0 0 24 24'
                xmlns='http://www.w3.org/2000/svg'>
             <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2'
@@ -24,8 +24,8 @@
           again
         </p>
       </NuxtLink>
-      <NuxtLink to='/story' class='block lg:flex-1 bg-white p-8 mb-8 rounded-lg'>
-        <div class='flex gap-x-4 border-b border-indigo-500 pb-3'>
+      <NuxtLink to='/story' class='block lg:flex-1 dark:bg-zinc-800 bg-white p-8 mb-8 rounded-lg'>
+        <div class='flex gap-x-4 border-b border-indigo-500 pb-3 dark:text-gray-200'>
           <svg class='w-6 h-6 text-indigo-500' fill='none' stroke='currentColor' viewBox='0 0 24 24'
                xmlns='http://www.w3.org/2000/svg'>
             <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2'
@@ -37,8 +37,8 @@
           Detailed account of the adventures faced along the quest for solutions. The code we git is a journey
         </p>
       </NuxtLink>
-      <NuxtLink to='/about' class='block lg:flex-1 bg-white p-8 mb-8 rounded-lg'>
-        <div class='flex gap-x-4 border-b border-cyan-500 pb-3'>
+      <NuxtLink to='/about' class='block lg:flex-1 dark:bg-zinc-800 bg-white p-8 mb-8 rounded-lg'>
+        <div class='flex gap-x-4 border-b border-cyan-500 pb-3 dark:text-gray-200'>
           <svg class='w-6 h-6 text-cyan-500' fill='none' stroke='currentColor' viewBox='0 0 24 24'
                xmlns='http://www.w3.org/2000/svg'>
             <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2'
@@ -55,9 +55,9 @@
 
     <div class='max-w-6xl mx-auto px-10 lg:flex md:flex-wrap gap-x-10 mt-10'>
       <NuxtLink :to='`/${getSection(article.type)}/${article.slug}`'
-                class='block bg-white p-8 mb-8 rounded md:w-1/2 hover:shadow-lg'
+                class='block bg-white p-8 mb-8 rounded md:w-1/2 hover:shadow-lg dark:bg-zinc-800'
                 v-for='(article, index) in articles' :key='index'>
-        <div class='flex gap-x-4 pb-2'>
+        <div class='flex gap-x-4 pb-2 dark:text-gray-200'>
           <div class='text-rose-500'>[<span class='text-cyan-600'>...</span>]</div>
           {{ article.title }}
         </div>

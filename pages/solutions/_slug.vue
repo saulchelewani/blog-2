@@ -11,17 +11,17 @@
         </div>
       </div>
     </div>
-    <article class='bg-white max-w-4xl mx-auto px-10 py-6 lg:-mt-20 lg:rounded-lg' v-if='article'>
-      <div class='flex gap-x-4 pb-4 rounded-r border-b font-sans text-cyan-800 text-sm font-normal'>
+    <article class='bg-white max-w-4xl mx-auto px-10 py-6 lg:-mt-20 lg:rounded-lg dark:bg-zinc-800' v-if='article'>
+      <div class='flex gap-x-4 pb-4 rounded-r border-b font-sans text-cyan-800 dark:text-cyan-600 text-sm font-normal italic'>
         <p class='text-rose-500'>[<span class='text-cyan-600'>...</span>]</p>
         {{ article.description }}
       </div>
-      <nuxt-content :document='article' class='text-gray-500' />
+      <nuxt-content :document='article' class='text-gray-500 dark:text-gray-400' />
       <div class='mt-14 mb-8 flex gap-x-6 md:gap-x-10 font-sans'>
-        <div class='h-16 md:h-24 w-16 md:w-24 bg-zinc-900 rounded md:rounded-full'></div>
+        <div class='h-16 md:h-24 w-16 md:w-24 bg-zinc-900 dark:bg-zinc-700 rounded md:rounded-full'></div>
         <div>
-          <h1 class='text-xl text-gray-600'>Saul Chelewani</h1>
-          <p class='text-gray-500 leading-6 text-sm'>Full stack web developer. Devblogger. </p>
+          <h1 class='text-xl text-gray-600 dark:text-gray-300'>Saul Chelewani</h1>
+          <p class='text-gray-500 dark:text-gray-400 leading-6 text-sm'>Full stack web developer. Devblogger. </p>
           <p class='flex mt-4'>
             <a href='https://github.com/saulchelewani' target='_blank' rel='noopener noreferrer'>
               <svg class='text-cyan-500 h-4 mr-4 fill-current' width='16' height='16' viewBox='0 0 16 16' fill='none'

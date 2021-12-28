@@ -1,5 +1,5 @@
 <template>
-  <div class='bg-gray-200 min-h-screen font-serif font-light leading-8'>
+  <div class='dark:bg-zinc-900 bg-gray-200 min-h-screen font-serif font-light leading-8'>
     <div class='bg-zinc-900'>
       <div class='container mx-auto px-10 py-2 text-gray-400 text-center flex justify-center'>
         <NuxtLink class='mx-4 pr-1 text-rose-500' id='home' to='/'>

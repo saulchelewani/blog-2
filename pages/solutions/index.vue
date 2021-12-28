@@ -9,9 +9,9 @@
     </div>
     <section class='max-w-4xl mx-auto px-10 py-6 mb-4 lg:mt-8 lg:rounded-lg' v-if='articles.length'>
       <NuxtLink :to='`/${getSection(article.type)}/${article.slug}`'
-                class='block bg-white p-8 mb-8 rounded-lg md:w-1/2 hover:shadow-lg'
+                class='block bg-white p-8 mb-8 rounded-lg md:w-1/2 hover:shadow-lg dark:bg-zinc-800'
                 v-for='(article, index) in articles' :key='index'>
-        <div class='flex gap-x-4 pb-2'>
+        <div class='flex gap-x-4 pb-2 dark:text-gray-200'>
           <svg class='w-6 h-6 text-amber-500' fill='none' stroke='currentColor' viewBox='0 0 24 24'
                xmlns='http://www.w3.org/2000/svg'>
             <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2'
