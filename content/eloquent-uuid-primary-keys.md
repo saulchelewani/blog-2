@@ -1,13 +1,14 @@
 ---
 title: UUID Primary Keys for Eloquent
 description: Changing implementation of Laravel Eloquent primary keys from auto-incrementing integers to UUID string
+type: solution
 ---
 For the majority of use cases, an auto incrementing ID for your eloquent models should be fine. 
 However, I have met a few cases where it has caused a living hell out of production data. 
 Hopefully one or two of those cases will be shared in the [story](/story) section one of these days.
 
 I have been looking for better solutions to the auto-incrementing primary keys. Luckily we have one: `UUID`.
-We leverage on Laravel's `\Str::uuid()` for generation of the keys. However, that won't be the end of it. There are a few thing to keep in mind:
+We leverage on Laravel's `Str::uuid()` for generation of the keys. However, that won't be the end of it. There are a few thing to keep in mind:
 1. Auto-generation of the keys on record creation 
 2. Database table structure
 3. Order of our records when listing
@@ -113,7 +114,7 @@ php artisan stubs:publish
 The stubs are published in the `/stubs` directory. Now we can edit the `model.stub` and `migration.create.stub` files to include the changes we changes we would otherwise make each time we generate new model and migration.
 
 ## Summary
-We have managed to change the primary key from auto-incrementing integer to a string uuid. More importantly, we have automated the generation of the boilerplate code so that we don't have to think about how we generate UUID for the next model we generate; and my favourite... no routines!
+We have managed to change the primary key from auto-incrementing integer to a string UUID. More importantly, we have automated the generation of the boilerplate code so that we don't have to think about how we generate UUID for the next model we generate; and my favourite... no routines!
 
 Having used UUID, we lose the advantage of using the primary key for sorting/ordering our records. You may consider using `created_at`. Basically it will serve the same purpose.
 

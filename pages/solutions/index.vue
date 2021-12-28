@@ -7,11 +7,11 @@
         </div>
       </div>
     </div>
-    <section class='bg-white max-w-4xl mx-auto px-10 py-6 mt-8 rounded-lg' v-if='articles.length'>
+    <section class='bg-white max-w-4xl mx-auto px-10 py-6 mb-4 mt-8 rounded-lg' v-if='articles.length'>
       <nuxt-link class='group' :to='`/solutions/${article.slug}`' v-for='(article, index) in articles' :key='index'>
         <h1 class='text-lg text-cyan-600 group-hover:text-cyan-700'>{{article.title}}</h1>
         <p class='text-gray-600'>{{article.description}}</p>
-        <p class='text-sm text-gray-500 py-1'>Created at {{article.createdAt}}</p>
+        <p class='text-sm text-gray-400 py-1'>Created {{$moment(article.createdAt).fromNow()}}</p>
       </nuxt-link>
     </section>
   </div>
@@ -19,11 +19,13 @@
 </template>
 
 <script>
+import moment from 'moment'
 export default {
   name: "index",
   async asyncData({$content}) {
-    const articles = await $content('solutions')
+    const articles = await $content()
       .only(['slug', 'description', 'title', 'createdAt'])
+      .where({type: 'solution'})
       .fetch()
     return {articles}
   },
