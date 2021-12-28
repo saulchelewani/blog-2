@@ -51,7 +51,7 @@
         </p>
       </NuxtLink>
     </div>
-    <h1 class='uppercase font-sans text-gray-400 text-center py-4'>Latest Articles</h1>
+    <h1 class='uppercase font-sans text-gray-400 text-center py-1'>Latest Articles</h1>
 
     <div class='max-w-6xl mx-auto px-10 lg:flex md:flex-wrap gap-x-10 mt-10'>
       <NuxtLink :to='`/${getSection(article.type)}/${article.slug}`'
