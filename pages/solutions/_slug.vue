@@ -1,19 +1,14 @@
 <template>
   <div>
-    <div class='h-[10rem] md:h-[20rem] bg-zinc-900 bg-gradient-to-r from-zinc-800 to-cyan-800'>
-      <div class='container mx-auto h-full'>
-        <div class='max-w-4xl mx-auto flex flex-col justify-center h-full px-10'>
-          <h1 class='text-cyan-500 text-2xl md:text-4xl'>
-            {{ article.title }}
-          </h1>
-          <p class='text-xs text-cyan-500 py-1 font-sans'>{{ $moment(article.createdAt).format('MMMM Do, YYYY') }}</p>
-
-        </div>
-      </div>
-    </div>
+    <TitleBanner :large='false'>
+      <h1 class='text-cyan-500 text-2xl md:text-4xl'>
+        {{ article.title }}
+      </h1>
+      <p class='text-xs text-cyan-500 py-1 font-sans'>{{ $moment(article.createdAt).format('MMMM Do, YYYY') }}</p>
+    </TitleBanner>
     <article class='bg-white max-w-4xl mx-auto px-10 py-6 lg:-mt-20 lg:rounded-lg dark:bg-zinc-800' v-if='article'>
-      <div class='flex gap-x-4 pb-4 rounded-r border-b font-sans text-cyan-800 dark:text-cyan-600 text-sm font-normal italic'>
-        <p class='text-rose-500'>[<span class='text-cyan-600'>...</span>]</p>
+      <div class='flex gap-x-4 pb-4 rounded-r border-b dark:border-zinc-600 font-sans text-cyan-800 dark:text-cyan-600 text-sm font-normal italic'>
+        <p class='text-rose-500 not-italic'>[<span class='text-cyan-600'>...</span>]</p>
         {{ article.description }}
       </div>
       <nuxt-content :document='article' class='text-gray-500 dark:text-gray-400' />
@@ -52,8 +47,11 @@
 
 
 import getSiteMeta from '../../utils/getSiteMeta'
+import Banner from '../../components/Banner'
+import TitleBanner from '../../components/TitleBanner'
 
 export default {
+  components: { TitleBanner, Banner },
   async asyncData({ $content, params }) {
     const article = await $content('/', params.slug).fetch()
 

@@ -1,14 +1,9 @@
 <template>
   <div>
-    <div class="h-[16rem] md:h-[28rem] bg-zinc-900 bg-gradient-to-r from-zinc-800 to-cyan-800">
-      <div class='container mx-auto h-full'>
-        <div class='flex flex-col justify-center items-center h-full'>
-          <h2 class='text-cyan-400 font-mono pb-8'>we spread solutions like</h2>
-          <h1 class='text-rose-500 text-3xl md:text-6xl font-mono'>[<span class='text-cyan-400'>...solutions</span>]
-          </h1>
-        </div>
-      </div>
-    </div>
+    <Banner :large='true'>
+      <h2 class='text-cyan-400 font-mono pb-8'>we spread solutions like</h2>
+      <h1 class='text-rose-500 text-3xl md:text-6xl font-mono'>[<span class='text-cyan-400'>...solutions</span>]</h1>
+    </Banner>
     <div class='max-w-6xl mx-auto px-10 lg:flex md:flex-wrap gap-x-10 mt-10'>
       <NuxtLink to='/solutions' class='block lg:flex-1 dark:bg-zinc-800 bg-white p-8 mb-8 rounded-lg'>
         <div class='flex gap-x-4 border-b border-amber-500 pb-3 dark:text-gray-200'>
@@ -78,7 +73,9 @@
 </template>
 
 <script>
+import Banner from '../components/Banner'
 export default {
+  components: { Banner },
   methods: {
     getSection(type) {
       let map = []

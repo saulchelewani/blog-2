@@ -1,12 +1,8 @@
 <template>
   <div>
-    <div class="h-[10rem] md:h-[20rem] bg-zinc-900 bg-gradient-to-r from-zinc-800 to-cyan-800">
-      <div class="container mx-auto h-full">
-        <div class="flex flex-col justify-center items-center h-full">
-          <h1 class="text-rose-500 text-3xl md:text-6xl font-mono">[<span class="text-cyan-400">...solutions</span>]</h1>
-        </div>
-      </div>
-    </div>
+    <Banner :large='false'>
+      <h1 class="text-rose-500 text-3xl md:text-6xl font-mono">[<span class="text-cyan-400">...solutions</span>]</h1>
+    </Banner>
     <section class='max-w-4xl mx-auto px-10 py-6 mb-4 lg:mt-8 lg:rounded-lg' v-if='articles.length'>
       <NuxtLink :to='`/${getSection(article.type)}/${article.slug}`'
                 class='block bg-white p-8 mb-8 rounded-lg md:w-1/2 hover:shadow-lg dark:bg-zinc-800'
@@ -28,8 +24,10 @@
 </template>
 
 <script>
+import Banner from '../../components/Banner'
 export default {
   name: "index",
+  components: { Banner },
   methods: {
     getSection(type) {
       let map = []

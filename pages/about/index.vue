@@ -1,16 +1,14 @@
 <template>
-  <div class="h-[10rem] md:h-[20rem] bg-zinc-900">
-    <div class="container mx-auto h-full">
-      <div class="flex flex-col justify-center items-center h-full">
-        <h1 class="text-rose-500 text-3xl md:text-6xl font-mono"><span class="text-cyan-400">about()</span>:self</h1>
-      </div>
-    </div>
-  </div>
+  <Banner>
+    <h1 class="text-rose-500 text-3xl md:text-6xl font-mono"><span class="text-cyan-400">about()</span>:self</h1>
+  </Banner>
 </template>
 
 <script>
+import Banner from '../../components/Banner'
 export default {
-  name: "index"
+  name: "index",
+  components: { Banner }
 }
 </script>
 
