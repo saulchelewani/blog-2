@@ -1,5 +1,5 @@
 ---
-title: UUID Primary Keys for Eloquent
+title: UUID Primary Key for Eloquent Models
 description: Changing the implementation of Laravel Eloquent primary keys from auto-incrementing integers to UUID string
 type: solution
 author: Saul Chelewani
