@@ -13,7 +13,9 @@
       </div>
       <nuxt-content :document='article' class='text-gray-500 dark:text-gray-300' />
       <div class='mt-14 mb-8 flex gap-x-6 md:gap-x-10 font-sans'>
-        <div class='h-16 md:h-24 w-16 md:w-24 bg-zinc-900 dark:bg-zinc-700 rounded md:rounded-full'></div>
+        <div class='h-16 md:h-24 w-16 md:w-24'>
+          <img src='/saul.jpg' alt='Saul Chelewani' class='md:rounded-full rounded' />
+        </div>
         <div>
           <h1 class='text-xl text-gray-600 dark:text-gray-300'>Saul Chelewani</h1>
           <p class='text-gray-500 dark:text-gray-400 leading-6 text-sm'>Full stack web developer. Devblogger. </p>
