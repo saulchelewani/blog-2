@@ -19,7 +19,6 @@
 <script>
 
 export default {
-  name: '_slug',
   async asyncData({ $content, params }) {
     const article = await $content('solutions', params.slug).fetch()
 
