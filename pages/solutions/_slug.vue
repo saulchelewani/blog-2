@@ -95,7 +95,14 @@ export default {
   @apply mt-1;
 }
 
-.nuxt-content-highlight > .filename {
-  @apply absolute right-0 p-2 text-xs text-cyan-600 font-mono;
+.nuxt-content-highlight {
+  @apply relative
 }
+.nuxt-content-highlight > .filename {
+  @apply absolute right-0 px-2 pt-1 text-xs text-cyan-600 font-mono opacity-40;
+}
+.nuxt-content-highlight > .line-numbers {
+  @apply pt-4
+}
+
 </style>
