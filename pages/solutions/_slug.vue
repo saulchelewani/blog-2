@@ -1,16 +1,17 @@
 <template>
   <div>
-    <div class='h-[10rem] md:h-[20rem] bg-zinc-900'>
+    <div class='h-[10rem] md:h-[20rem] bg-zinc-900 bg-gradient-to-r from-zinc-800 to-cyan-800'>
       <div class='container mx-auto h-full'>
-        <div class='flex flex-col justify-center items-center h-full'>
-          <h1 class='text-rose-500 text-3xl md:text-6xl font-mono'>[<span class='text-cyan-400'>...solutions</span>]
+        <div class='max-w-4xl mx-auto flex flex-col justify-center h-full px-10'>
+          <h1 class='text-cyan-500 text-2xl md:text-4xl'>
+            {{ article.title }}
           </h1>
+          <p class='text-xs text-cyan-500 py-1 font-sans'>Created {{ $moment(article.createdAt).fromNow() }}</p>
+
         </div>
       </div>
     </div>
-    <article class='bg-white max-w-4xl mx-auto px-10 py-6 lg:mt-8 lg:rounded-lg' v-if='article'>
-      <h1 class='text-xl pt-4 text-cyan-600'>{{ article.title }}</h1>
-      <p class='text-xs text-gray-400 py-1 font-sans'>Created {{$moment(article.createdAt).fromNow()}}</p>
+    <article class='bg-white max-w-4xl mx-auto px-10 py-6 lg:-mt-20 lg:rounded-lg' v-if='article'>
       <nuxt-content :document='article' class='text-gray-500' />
     </article>
   </div>

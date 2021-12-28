@@ -1,9 +1,9 @@
 <template>
   <div>
-    <div class='h-[16rem] md:h-[28rem] bg-zinc-900'>
+    <div class='h-[16rem] md:h-[28rem] bg-zinc-900 bg-gradient-to-r from-zinc-800 to-cyan-800'>
       <div class='container mx-auto h-full'>
         <div class='flex flex-col justify-center items-center h-full'>
-          <h2 class='text-gray-400 font-mono pb-8'>we spread solutions like</h2>
+          <h2 class='text-cyan-400 font-mono pb-8'>we spread solutions like</h2>
           <h1 class='text-rose-500 text-3xl md:text-6xl font-mono'>[<span class='text-cyan-400'>...solutions</span>]
           </h1>
         </div>

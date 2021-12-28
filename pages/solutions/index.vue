@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="h-[10rem] md:h-[20rem] bg-zinc-900">
+    <div class="h-[10rem] md:h-[20rem] bg-zinc-900 bg-gradient-to-r from-zinc-800 to-cyan-800">
       <div class="container mx-auto h-full">
         <div class="flex flex-col justify-center items-center h-full">
           <h1 class="text-rose-500 text-3xl md:text-6xl font-mono">[<span class="text-cyan-400">...solutions</span>]</h1>
