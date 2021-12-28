@@ -1,6 +1,6 @@
 ---
 title: UUID Primary Keys for Eloquent
-description: Changing implementation of primary keys from auto-incrementing integers to UUID
+description: Changing implementation of Laravel Eloquent primary keys from auto-incrementing integers to UUID string
 ---
 For the majority of use cases, an auto incrementing ID for your eloquent models should be fine. 
 However, I have met a few cases where it has caused a living hell out of production data. 
