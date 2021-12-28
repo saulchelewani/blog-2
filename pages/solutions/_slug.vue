@@ -6,7 +6,7 @@
           <h1 class='text-cyan-500 text-2xl md:text-4xl'>
             {{ article.title }}
           </h1>
-          <p class='text-xs text-cyan-500 py-1 font-sans'>Created {{ $moment(article.createdAt).fromNow() }}</p>
+          <p class='text-xs text-cyan-500 py-1 font-sans'>{{ $moment(article.createdAt).format('MMMM Do, YYYY') }}</p>
 
         </div>
       </div>

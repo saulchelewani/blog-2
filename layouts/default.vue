@@ -18,7 +18,7 @@
     </div>
     <Nuxt />
     <div class='text-sm text-gray-400 text-center py-4 font-mono'>
-      All rights reserved &copy; {{ new Date().getFullYear() }}
+      [...]  &copy {{ new Date().getFullYear() }} All rights reserved
     </div>
   </div>
 </template>
