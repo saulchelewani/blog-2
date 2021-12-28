@@ -35,33 +35,31 @@ export default {
 </script>
 
 <style>
-.nuxt-content-container p {
+.nuxt-content-container p, .nuxt-content p {
   @apply my-2;
 }
 
-.nuxt-content-container a {
+.nuxt-content-container a, .nuxt-content a {
   @apply text-cyan-600 hover:underline;
 }
 
-.nuxt-content-container code {
+.nuxt-content-container code, .nuxt-content code {
   @apply text-rose-500 text-sm;
 }
 
-.nuxt-content-container ol {
+.nuxt-content-container ol, .nuxt-content ol {
   @apply list-decimal list-inside py-2 ml-2;
 }
 
-.nuxt-content-container h2, .nuxt-content-container h3 {
+.nuxt-content-container h2, .nuxt-content-container h3, .nuxt-content h2, .nuxt-content h3 {
   @apply text-amber-600 ;
 }
 
-.nuxt-content-container h2 {
+.nuxt-content-container h2, .nuxt-content h2 {
   @apply text-lg mt-2 mb-1;
 }
 
-.nuxt-content-container h3 {
+.nuxt-content-container h3, .nuxt-content h3 {
   @apply mt-1;
 }
-
-
 </style>
