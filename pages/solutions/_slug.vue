@@ -50,12 +50,61 @@
 
 <script>
 
+
+import getSiteMeta from '../../utils/getSiteMeta'
+
 export default {
   async asyncData({ $content, params }) {
     const article = await $content('/', params.slug).fetch()
 
     return {
       article
+    }
+  },
+  head() {
+    return {
+      title: this.article.title,
+      meta: [
+        ...this.meta,
+        {
+          property: "article:published_time",
+          content: this.article.createdAt,
+        },
+        {
+          property: "article:modified_time",
+          content: this.article.updatedAt,
+        },
+        {
+          property: "article:tag",
+          content: this.article.tags ? this.article.tags.toString() : "",
+        },
+        { name: "twitter:label1", content: "Written by" },
+        { name: "twitter:data1", content: "Saul Chelewani" },
+        { name: "twitter:label2", content: "Filed under" },
+        {
+          name: "twitter:data2",
+          content: this.article.tags ? this.article.tags.toString() : "",
+        },
+      ],
+      link: [
+        {
+          hid: "canonical",
+          rel: "canonical",
+          href: `https://chelewani.co/solutions/${this.$route.params.slug}`,
+        },
+      ],
+    };
+  },
+  computed: {
+    meta() {
+      const metaData = {
+        type: "article",
+        title: this.article.title,
+        description: this.article.description,
+        url: `https://chelewani.co/solutions/${this.$route.params.slug}`,
+        mainImage: this.article.image,
+      };
+      return getSiteMeta(metaData);
     }
   },
   data() {
@@ -99,10 +148,10 @@ export default {
   @apply relative
 }
 .nuxt-content-highlight > .filename {
-  @apply hidden md:block absolute right-0 px-2 pt-1 text-xs text-cyan-600 font-mono opacity-50;
+  @apply hidden md:block  absolute right-0 text-gray-500 font-light z-10 mr-2 mt-1 text-xs font-mono;
 }
 .nuxt-content-highlight > .line-numbers {
-  @apply md:pt-4
+  @apply md:pt-4 rounded
 }
 
 </style>
