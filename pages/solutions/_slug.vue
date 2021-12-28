@@ -9,7 +9,7 @@
       </div>
     </div>
     <article class='bg-white max-w-4xl mx-auto px-10 py-6 lg:mt-8 lg:rounded-lg' v-if='article'>
-      <h1 class='text-xl pt-4 text-amber-600'>{{ article.title }}</h1>
+      <h1 class='text-xl pt-4 text-cyan-600'>{{ article.title }}</h1>
       <p class='text-sm text-gray-400 py-1'>Created {{$moment(article.createdAt).fromNow()}}</p>
       <nuxt-content :document='article' class='text-gray-500' />
     </article>
@@ -53,7 +53,7 @@ export default {
 }
 
 .nuxt-content-container h2, .nuxt-content-container h3, .nuxt-content h2, .nuxt-content h3 {
-  @apply text-amber-600 ;
+  @apply text-cyan-600 ;
 }
 
 .nuxt-content-container h2, .nuxt-content h2 {
