@@ -1,6 +1,6 @@
-import getSiteMeta from "./utils/getSiteMeta";
+import getSiteMeta from './utils/getSiteMeta'
 
-const meta = getSiteMeta();
+const meta = getSiteMeta()
 
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
@@ -14,40 +14,46 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
+    script: [
+      {
+        src: 'https://www.googletagmanager.com/gtag/js?id=G-2RQQZS4PHL',
+        async: true
+      }
+    ],
     htmlAttrs: {
-      lang: "en-US",
+      lang: 'en-US'
     },
     title: 'Chelewani',
     meta: [
       ...meta,
-      { charset: "utf-8" },
-      { name: "HandheldFriendly", content: "True" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { property: "og:site_name", content: "Chelewani" },
+      { charset: 'utf-8' },
+      { name: 'HandheldFriendly', content: 'True' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { property: 'og:site_name', content: 'Chelewani' },
       { hid: 'description', name: 'description', content: '' },
       { name: 'format-detection', content: 'telephone=no' },
       {
-        hid: "description",
-        name: "description",
+        hid: 'description',
+        name: 'description',
         content:
-          "We spread the solutions like [...]. Coding and application architectural solutions.",
+          'We spread the solutions like [...]. Coding and application architectural solutions.'
       },
-      { property: "og:image:width", content: "740" },
-      { property: "og:image:height", content: "300" },
-      { name: "twitter:site", content: "@kamlfuz" },
-      { name: "twitter:card", content: "summary_large_image" },
+      { property: 'og:image:width', content: '740' },
+      { property: 'og:image:height', content: '300' },
+      { name: 'twitter:site', content: '@kamlfuz' },
+      { name: 'twitter:card', content: 'summary_large_image' }
     ],
     link: [
       // { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
       {
-        hid: "canonical",
-        rel: "canonical",
-        href: process.env.BASE_URL,
+        hid: 'canonical',
+        rel: 'canonical',
+        href: process.env.BASE_URL
       },
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400&display=swap' }
 
-    ],
+    ]
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
