@@ -99,10 +99,10 @@ export default {
   @apply relative
 }
 .nuxt-content-highlight > .filename {
-  @apply absolute right-0 px-2 pt-1 text-xs text-cyan-600 font-mono opacity-40;
+  @apply hidden md:block absolute right-0 px-2 pt-1 text-xs text-cyan-600 font-mono opacity-50;
 }
 .nuxt-content-highlight > .line-numbers {
-  @apply pt-4
+  @apply md:pt-4
 }
 
 </style>
