@@ -8,7 +8,7 @@
         </div>
       </div>
     </div>
-    <article class='bg-white max-w-4xl mx-auto px-10 py-6 mt-8 rounded-lg'>
+    <article class='bg-white max-w-4xl mx-auto px-10 py-6 mt-8 rounded-lg' v-if='article'>
       <h1 class='text-xl pt-4 text-amber-600'>{{ article.title }}</h1>
       <nuxt-content :document='article' class='text-gray-500' />
     </article>
@@ -25,6 +25,11 @@ export default {
 
     return {
       article
+    }
+  },
+  data() {
+    return {
+      article: null
     }
   }
 }
