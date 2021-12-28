@@ -49,9 +49,10 @@
     <h1 class='uppercase font-sans text-gray-400 text-center py-1'>Latest Articles</h1>
 
     <div class='max-w-6xl mx-auto px-10 lg:flex md:flex-wrap gap-x-10 mt-10'>
-      <NuxtLink :to='`/${getSection(article.type)}/${article.slug}`'
-                class='block bg-white p-8 mb-8 rounded md:w-1/2 hover:shadow-lg dark:bg-zinc-800'
-                v-for='(article, index) in articles' :key='index'>
+      <NuxtLink
+        :to='`/${getSection(article.type)}/${article.slug}`'
+        class='block bg-white p-8 mb-8 rounded md:w-1/2 hover:shadow-lg dark:bg-zinc-800'
+        v-for='(article, index) in articles' :key='index'>
         <div class='flex gap-x-4 pb-2 dark:text-gray-200'>
           <div class='text-rose-500'>[<span class='text-cyan-600'>...</span>]</div>
           {{ article.title }}
@@ -74,6 +75,7 @@
 
 <script>
 import Banner from '../components/Banner'
+
 export default {
   components: { Banner },
   methods: {

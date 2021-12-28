@@ -11,7 +11,7 @@
         <p class='text-rose-500 not-italic'>[<span class='text-cyan-600'>...</span>]</p>
         {{ article.description }}
       </div>
-      <nuxt-content :document='article' class='text-gray-500 dark:text-gray-400' />
+      <nuxt-content :document='article' class='text-gray-500 dark:text-gray-300' />
       <div class='mt-14 mb-8 flex gap-x-6 md:gap-x-10 font-sans'>
         <div class='h-16 md:h-24 w-16 md:w-24 bg-zinc-900 dark:bg-zinc-700 rounded md:rounded-full'></div>
         <div>
