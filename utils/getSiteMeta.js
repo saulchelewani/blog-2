@@ -2,7 +2,7 @@ const type = 'website'
 const url = 'https://chelewani.co'
 const title = 'Chelewani'
 const description = 'We spread the solutions like [...]. Coding and application architectural solutions.'
-const mainImage = '/saul.jpg'
+const mainImage = 'https://chelewani.co/saul.jpg'
 
 export default (meta) => {
   return [

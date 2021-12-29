@@ -102,7 +102,7 @@ export default {
         title: this.article.title,
         description: this.article.description,
         url: `https://chelewani.co/solutions/${this.$route.params.slug}`,
-        mainImage: this.article.author_image,
+        mainImage: `https://chelewani.co/${this.article.author_image}`,
       };
       return getSiteMeta(metaData);
     }
