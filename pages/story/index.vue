@@ -1,7 +1,9 @@
 <template>
-  <Banner>
-    <h1 class="text-rose-500 text-3xl md:text-6xl font-mono"><span class="text-cyan-400">tell()</span>:Story</h1>
-  </Banner>
+  <div>
+    <Banner>
+      <h1 class="text-rose-500 text-3xl md:text-6xl font-mono"><span class="text-cyan-400">tell()</span>:Story</h1>
+    </Banner>
+  </div>
 </template>
 
 <script>
