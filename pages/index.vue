@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Banner :large='true'>
+    <Banner large>
       <h2 class='text-cyan-400 font-mono pb-8'>we spread solutions like</h2>
       <h1 class='text-rose-500 text-3xl md:text-6xl font-mono'>[<span class='text-cyan-400'>...solutions</span>]</h1>
     </Banner>
@@ -48,36 +48,40 @@
     </div>
     <h1 class='uppercase font-sans text-gray-400 text-center py-1'>Latest Articles</h1>
 
-    <div class='max-w-6xl mx-auto px-10 lg:flex md:flex-wrap gap-x-10 mt-10'>
-      <NuxtLink
-        :to='`/${getSection(article.type)}/${article.slug}`'
-        class='block bg-white p-8 mb-8 rounded md:w-1/2 hover:shadow-lg dark:bg-zinc-800'
+    <div class='max-w-6xl mx-auto px-10 lg:grid lg:grid-cols-2 gap-x-8 mt-10 -pl-4'>
+      <div
+        class=''
         v-for='(article, index) in articles' :key='index'>
-        <div class='flex gap-x-4 pb-2 dark:text-gray-200'>
-          <div class='text-rose-500'>[<span class='text-cyan-600'>...</span>]</div>
-          {{ article.title }}
-        </div>
-        <p class='pt-3 text-gray-400'>{{ article.description }}</p>
-        <div class='flex items-center gap-x-2 text-gray-400 mt-3'>
-          <span class='uppercase text-xs bg-cyan-100 text-cyan-600 p-1 rounded font-sans font-semibold'>
-          {{ article.type }}
-        </span>
-          <svg class='w-6 h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
-            <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2'
-                  d='M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z'></path>
-          </svg>
-          <span class='text-xs font-sans'>{{ $moment(article.createdAt).fromNow() }}</span>
-        </div>
-      </NuxtLink>
+        <NuxtLink
+          :to='`/${getSection(article.type)}/${article.slug}`'
+          class='block bg-white p-8 mb-8 rounded hover:shadow-lg dark:bg-zinc-800'
+        >
+          <div class='flex gap-x-4 pb-2 dark:text-gray-200'>
+            <div class='text-rose-500'>[<span class='text-cyan-600'>...</span>]</div>
+            {{ article.title }}
+          </div>
+          <p class='pt-3 text-gray-400'>{{ article.description }}</p>
+          <div class='flex items-center gap-x-2 text-gray-400 mt-3'>
+          <ArticleLabel :type='article.type' />
+            <svg class='w-6 h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24'
+                 xmlns='http://www.w3.org/2000/svg'>
+              <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2'
+                    d='M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z'></path>
+            </svg>
+            <span class='text-xs font-sans'>{{ $moment(article.createdAt).fromNow() }}</span>
+          </div>
+        </NuxtLink>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 import Banner from '../components/Banner'
+import ArticleLabel from '../components/ArticleLabel'
 
 export default {
-  components: { Banner },
+  components: { ArticleLabel, Banner },
   methods: {
     getSection(type) {
       let map = []
@@ -90,7 +94,7 @@ export default {
   async asyncData({ $content }) {
     const articles = await $content()
       .only(['slug', 'description', 'title', 'createdAt', 'type'])
-      .where({ type: 'solution' })
+      // .where({ type: 'solution' })
       .sortBy('createdAt', 'desc')
       .limit(6)
       .fetch()

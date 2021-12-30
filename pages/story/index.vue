@@ -3,14 +3,28 @@
     <Banner>
       <h1 class="text-rose-500 text-3xl md:text-6xl font-mono"><span class="text-cyan-400">tell()</span>:Story</h1>
     </Banner>
+    <ArticleList :articles='articles' />
   </div>
 </template>
 
 <script>
 import Banner from '../../components/Banner'
+import ArticleList from '../../components/ArticleList'
 export default {
   name: "index",
-  components: { Banner }
+  components: { ArticleList, Banner },
+  async asyncData({$content}) {
+    const articles = await $content()
+      .only(['slug', 'description', 'title', 'createdAt', 'type'])
+      .where({type: 'story'})
+      .fetch()
+    return {articles}
+  },
+  data() {
+    return {
+      articles: []
+    }
+  }
 }
 </script>
 

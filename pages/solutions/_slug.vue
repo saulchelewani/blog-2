@@ -6,7 +6,7 @@
       </h1>
       <p class='text-xs text-cyan-500 py-1 font-sans'>{{ $moment(article.createdAt).format('MMMM Do, YYYY') }}</p>
     </TitleBanner>
-    <article class='bg-gradient-to-b from-white dark:from-zinc-800 bg-white dark:bg-zinc-800 bg-opacity-70 max-w-4xl mx-auto px-10 py-6 lg:-mt-20 lg:rounded-lg ' v-if='article'>
+    <article class="bg-gradient-to-b from-white dark:from-zinc-800 bg-white dark:bg-zinc-800 bg-opacity-70 max-w-4xl mx-auto px-10 py-6 lg:-mt-20 lg:rounded-lg" v-if='article'>
       <div class='flex gap-x-4 pb-4 rounded-r border-b dark:border-zinc-600 font-sans text-cyan-800 dark:text-cyan-400 text-sm font-normal italic'>
         <p class='text-rose-500 not-italic'>[<span class='text-cyan-600'>...</span>]</p>
         {{ article.description }}

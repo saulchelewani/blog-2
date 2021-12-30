@@ -14,7 +14,10 @@
 export default {
   name: 'Banner',
   props: {
-    large: {default: false}
+    large: {
+      type: Boolean,
+      default: false
+    }
   }
 }
 </script>

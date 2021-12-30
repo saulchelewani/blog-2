@@ -9,14 +9,17 @@
           Solutions
         </NuxtLink>
         <NuxtLink class='md:px-6 md:mx-4 px-2' to='/story'>
-          The Story
+          <span class='hidden md:inline-block'>The &nbsp;</span>Story
         </NuxtLink>
         <NuxtLink class='md:px-6 md:mx-4 px-2' to='/about'>
           About
         </NuxtLink>
       </nav>
     </div>
+    <div  class=" ">
+
     <Nuxt />
+    </div>
     <div class='text-sm text-gray-400 text-center py-4 font-mono bg-zinc-900 mt-8'>
       <nuxt-link to='/' class='text-rose-500'>[<span class='text-cyan-500'>...</span>]</nuxt-link>
       &copy {{ new Date().getFullYear() }} All rights reserved
