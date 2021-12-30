@@ -46,7 +46,7 @@ export default {
         {
           hid: 'canonical',
           rel: 'canonical',
-          href: `https://chelewani.co/solutions/${this.$route.params.slug}`
+          href: `https://chelewani.co/about/${this.$route.params.slug}`
         }
       ]
     }
@@ -57,7 +57,7 @@ export default {
         type: 'article',
         title: this.article.title,
         description: this.article.description,
-        url: `https://chelewani.co/solutions/${this.$route.params.slug}`,
+        url: `https://chelewani.co/about/${this.$route.params.slug}`,
         mainImage: `https://chelewani.co/${this.article.author_image}`
       }
       return getSiteMeta(metaData)
