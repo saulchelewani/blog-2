@@ -9,12 +9,15 @@ import getSiteMeta from '../../utils/getSiteMeta'
 import BlogArticle from '../../components/BlogArticle'
 
 export default {
-  components: { BlogArticle},
-  async asyncData({ $content, params }) {
-    const article = await $content('/', params.slug).fetch()
-
-    return {
-      article
+  components: { BlogArticle },
+  async asyncData({ $content, params, error }) {
+    try {
+      const article = await $content('/', params.slug)
+        .where({ type: 'story' })
+        .fetch()
+      return { article }
+    } catch (err) {
+      error({ statusCode: 404 })
     }
   },
   head() {

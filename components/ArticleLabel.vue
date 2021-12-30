@@ -20,7 +20,7 @@ export default {
   computed: {
     color() {
       let match = {
-        'solution': 'bg-amber-100 text-amber-600',
+        'solution': 'bg-amber-100 text-amber-700',
         'story': 'bg-indigo-100 text-indigo-600',
         'about': 'bg-cyan-100 text-cyan-600'
       }
