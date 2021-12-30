@@ -23,7 +23,7 @@ export default {
     htmlAttrs: {
       lang: 'en-US'
     },
-    title: 'Chelewani',
+    title: 'Chelewani - We spread the solutions [...]',
     meta: [
       ...meta,
       { charset: 'utf-8' },
