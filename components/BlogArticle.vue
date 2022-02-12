@@ -32,6 +32,10 @@ export default {
   @apply my-2;
 }
 
+.nuxt-content-container ul, .nuxt-content ul {
+  @apply list-disc list-inside
+}
+
 .nuxt-content-container a, .nuxt-content a {
   @apply text-cyan-600 dark:text-cyan-400 hover:underline;
 }

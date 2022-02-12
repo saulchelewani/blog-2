@@ -5,7 +5,8 @@
       <h1 class='text-rose-500 text-3xl md:text-6xl font-mono'>[<span class='text-cyan-400'>...solutions</span>]</h1>
     </Banner>
     <div class='max-w-6xl mx-auto px-10 md:grid md:grid-cols-2 gap-x-10 mt-10'>
-      <NuxtLink to='/solutions' class='block dark:bg-zinc-800 bg-white overflow-hidden mb-8 rounded-lg lg:min-h-60 lg:flex'>
+      <NuxtLink to='/solutions'
+                class='block dark:bg-zinc-800 bg-white overflow-hidden mb-8 rounded-lg lg:min-h-60 lg:flex'>
         <img src='/solutions.jpeg' alt='solutions' class='lg:w-40 object-cover'>
         <div class='p-8'>
           <div class='flex gap-x-4 border-b border-amber-500 pb-3 dark:text-gray-200'>
@@ -68,7 +69,7 @@
           <p class='pt-3 text-gray-400'>{{ article.description }}</p>
         </div>
         <div class='flex items-center gap-x-2 text-gray-400 mt-3'>
-          <ArticleLabel :type='article.type' />
+          <ArticleLabel :type='article.type'/>
           <svg class='w-6 h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24'
                xmlns='http://www.w3.org/2000/svg'>
             <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2'
@@ -86,7 +87,7 @@ import Banner from '../components/Banner'
 import ArticleLabel from '../components/ArticleLabel'
 
 export default {
-  components: { ArticleLabel, Banner },
+  components: {ArticleLabel, Banner},
   methods: {
     getSection(type) {
       let map = []
@@ -96,14 +97,14 @@ export default {
       return map[type]
     }
   },
-  async asyncData({ $content }) {
+  async asyncData({$content}) {
     const articles = await $content()
       .only(['slug', 'description', 'title', 'createdAt', 'type'])
       // .where({ type: 'solution' })
       .sortBy('createdAt', 'desc')
       .limit(6)
       .fetch()
-    return { articles }
+    return {articles}
   },
   data() {
     return {
