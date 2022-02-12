@@ -1,6 +1,6 @@
 ---
 title: Service Classes in Laravel
-description: Service classes, what they are, and how to us them to organize your code in a laravel application
+description: Service classes, what they are, and how to use them to organize your code in a laravel application
 type: solution
 author: Saul Chelewani
 author_image: saul.jpg
