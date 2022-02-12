@@ -249,8 +249,10 @@ Then we have another piece of magic in our controllers
 ```php
 return $this->respond()->ok()->json();
 ```
-This is from a response builder package [Yamikani Kalinde ](https://github.com/ykalinde) and I developed. Feel free to
-check it out
+This is from a [response builder](https://packagist.org/packages/bluecloud/response-builder) package 
+[Yamikani Kalinde ](https://github.com/ykalinde) and I developed. Feel free to
+check it out.
 
+Happy Coding!
 
 
