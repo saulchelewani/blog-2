@@ -12,8 +12,8 @@ Software development is about building blocks, re-using code and taking advantag
 other people in the field. Don't re-invent the wheel. We can take advantage of existing solutions by cloning as is, 
 using packages in our project, and integrating to existing published APIs. In this article we will dwell on the last one.  
 
-API integrations will make our lives easier as we ride on top of out-of-the-box solutions but available for any sort of manipulation
-before delivering to the end user. Having integrated to a handful APIs, I came up with a set of guidelines we can use when making 
+API integrations will make our lives easier as we ride on top of out-of-the-box solutions. Having integrated to a 
+handful APIs, I came up with a set of guidelines we can use when making 
 API integrations. 
 
 ## Rule of Thumb
@@ -23,8 +23,8 @@ API integrations.
  4. Have hot-swappable request interfaces
  5. Log everything
 
-We will use an example of a weather API by the [WeatherAPI.com](https://weatherapi.com) available on
-[RapidAPI](https://rapidapi.com/hub), integrated into a Laravel application _If you are into
+We will use an example of a weather API by [WeatherAPI.com](https://weatherapi.com) available on
+[RapidAPI](https://rapidapi.com/hub), integrated into a Laravel application. _If you are into
 public API integrations, consider bookmarking RapidAPI._ You're welcome.
 
 ### 1. Keep your Connection Variables Separate
