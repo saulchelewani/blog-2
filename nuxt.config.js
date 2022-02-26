@@ -36,7 +36,7 @@ export default {
         hid: 'description',
         name: 'description',
         content:
-          'We spread the solutions like [...]. Coding and application architectural solutions.'
+          'Coding and application architectural solutions. We spread the solutions like [...]. '
       },
       { property: 'og:image:width', content: '740' },
       { property: 'og:image:height', content: '300' },
