@@ -113,7 +113,7 @@ expected, (the happy path), we return an object of `WeatherResponse` class. If a
 object of `FailuredWeatherResponse`. Both of these implement our response interface.
 
 ### 4. Have Hot-swappable Request Interfaces
-Just as we have a response interface, we will have a similar implementation for a request interface. This time for slightly
+Just as we have a response interface, we will have a similar implementation for a request interface. This time it is for slightly
 different reasons. The main reason we need a request interface is the ability to swap it out for a fake or a 
 different API altogether. Consider a scenario where the 3rd party API charges you per request, and you are not ready to
 start incurring those costs while you're still developing your implementation. Sometimes you just want to work offline.
