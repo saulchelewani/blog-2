@@ -5,7 +5,7 @@ type: solution
 author: Saul Chelewani
 author_image: saul.jpg
 image: saul.jpg
-tags: laravel, API, testable, hot-swappable, refactoring, clean code
+tags: laravel, API, testable, hot-swappable, refactoring, clean code, integration
 category: laravel
 ---
 Software development is about building blocks, re-using code and taking advantage of solutions that were already made by 
