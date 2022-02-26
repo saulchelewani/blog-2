@@ -54,7 +54,7 @@ return [
 WEATHER_HOST=https://weatherapi-com.p.rapidapi.com
 WEATHER_ENDPOINT=forecast.json
 ```
-In this implementation, during the API cut-over, we will just go on the server and edit the `.env` file. No commits, no PRs.
+The three code snippets above are our service class, a config file and an env file. In this implementation, during the API cut-over, we will just go on the server and edit the `.env` file. No commits, no PRs.
 We are up and running in seconds.
 
 ### 2. Expect API Calls to Fail
