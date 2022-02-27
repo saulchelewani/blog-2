@@ -9,7 +9,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'serif': ['Merriweather', 'Georgia']
+        'serif': ['Merriweather', 'Georgia'],
+        'mono': ['DM Mono', 'monospace'],
       }
     },
   },

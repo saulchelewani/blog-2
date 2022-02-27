@@ -41,7 +41,7 @@ export default {
 }
 
 .nuxt-content-container code, .nuxt-content code {
-  @apply text-rose-500 dark:text-rose-400 text-sm;
+  @apply text-rose-500 dark:text-rose-400 font-mono;
 }
 
 .nuxt-content-container ol, .nuxt-content ol {
