@@ -19,7 +19,7 @@ API integrations.
 ## Rule of Thumb
  1. Keep your connection variables separate
  2. Expect API calls to fail
- 3. Have a mockable response interfaces
+ 3. Have mockable response interfaces
  4. Have hot-swappable request interfaces
  5. Log everything
 
@@ -79,7 +79,7 @@ catch(Exception $exception) {
 Using try-catch block takes care of the unprecedented 3rd party API failures. Then we should think of handing it 
 gracefully. That brings us to our next rule...
 
-### 3. Have a Mockable Response Interfaces
+### 3. Have Mockable Response Interfaces
 The spec of any "good" API we consume will provide a standard structure of responses. That gives us an advantage to
 predict how our service handler should manage the response data and format it correctly for our consumers. Another advantage
 that gives us is the ability to "fake" the response if we are doing isolated tests and handling exceptions. 
@@ -224,7 +224,7 @@ natural. We don't have to think of what to do and how to do it.
 
 The 5 guidelines outlined above are very opinionated, but you will soon appreciate how speed of delivery and
 code quality improves. Just remember: Keep your connection variables separate. Expect API calls to fail. 
-Have a mockable response interfaces. Have hot-swappable request interfaces. Log everything.
+Have mockable response interfaces. Have hot-swappable request interfaces. Log everything.
 
 Happy Coding!
 
