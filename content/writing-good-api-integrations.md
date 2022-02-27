@@ -103,14 +103,14 @@ public function query(string $location, int $days): IWeatherResponse
             );
         return new WeatherResponse($response);    
     catch(Exception $exception) {
-        return new FailuredWeatherResponse($exception->getMessage());
+        return new FailedWeatherResponse($exception->getMessage());
     }    
 }
 ```
 The query method in the snippet above takes location and number of days we are getting the weather forecast for. In turn,
 it is expected to return a response object of the `IWeatherResponse` interface. In the try block, if everything goes as 
 expected, (the happy path), we return an object of `WeatherResponse` class. If an exception is thrown we return an 
-object of `FailuredWeatherResponse`. Both of these implement our response interface.
+object of `FailedWeatherResponse`. Both of these implement our response interface.
 
 ### 4. Have Hot-swappable Request Interfaces
 Just as we have a response interface, we will have a similar implementation for a request interface. This time it is for slightly
@@ -139,7 +139,7 @@ class WeatherService implements IWeatherService
                 );
             return new WeatherResponse($response);    
         catch(Exception $exception) {
-            return new FailuredWeatherResponse($exception->getMessage());
+            return new FailedWeatherResponse($exception->getMessage());
         }    
     }
 }  
@@ -212,7 +212,7 @@ public function query(string $location, int $days): IWeatherResponse
         return new WeatherResponse($response);    
     catch(Exception $exception) {
         Event::dispatch(new WeatherExceptionEvent($exception));
-        return new FailuredWeatherResponse($exception->getMessage());
+        return new FailedWeatherResponse($exception->getMessage());
     }    
 }
 ```
