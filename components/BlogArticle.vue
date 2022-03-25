@@ -29,7 +29,7 @@ export default {
 
 <style>
 .nuxt-content-container p, .nuxt-content p {
-  @apply my-2;
+  @apply my-4;
 }
 
 .nuxt-content-container ul, .nuxt-content ul {

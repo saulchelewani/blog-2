@@ -17,6 +17,7 @@ export default {
     const articles = await $content()
       .only(['slug', 'description', 'title', 'createdAt', 'type'])
       .where({type: 'story'})
+      .sortBy('createdAt', 'desc')
       .fetch()
     return {articles}
   },
